@@ -1,17 +1,15 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import '../login/LoginKC.css'
 
 export default function LoginKC() {
   return (
-    <div>
-        <h1>
-        BIENVENIDA
-      </h1><br/>
+    <div className='containerLoginKC'>
+      <Form>
       <h3>
         Iniciar Sesion
-      </h3> <br/>
-      <Form>
+      </h3>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Correo" />
       </Form.Group>

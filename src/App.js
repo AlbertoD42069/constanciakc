@@ -2,17 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainKC from './MainKC';
+import HomeKC from './homeKC/HomeKC';
+
 
 function App() {
   return (
     <div className="App">
-      <MainKC/>
+       <MainKC/>
     </div>
   );
 }
 
 export default App;
 /*
+ <MainKC/>
 <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

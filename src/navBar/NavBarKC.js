@@ -2,6 +2,8 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import LogoutBtn from './LogoutKCBtn';
+import '../navBar/NavBarKC.css';
 
 export default function NavBarKC() {
   return (
@@ -12,6 +14,7 @@ export default function NavBarKC() {
           <Nav className="navItem justify-content-end">
             <Nav.Link href='addStudent'>{'Registrar Alumno'}</Nav.Link>
             <Nav.Link href='/'>{'Constancias'}</Nav.Link>
+            <Nav.Link><LogoutBtn/></Nav.Link>
           </Nav>
         </Container>
       </Navbar>

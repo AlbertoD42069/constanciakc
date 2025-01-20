@@ -3,8 +3,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import { TextLoginStatic } from '../Resource/Resource.js'
 import {signInWithEmailAndPassword} from 'firebase/auth'
-import Swal from 'sweetalert2';
 import { authKC } from '../firebase';
+import { IncorrectUser } from '../alertSwal/AlertSwal.js';
 
 const LoginBtn = (props) => {
 
@@ -12,11 +12,7 @@ const LoginBtn = (props) => {
         try{
             await signInWithEmailAndPassword(authKC, props.user, props.pass)
         }catch (error) {
-            Swal.fire({
-                title: "Error de usuario",
-                text: "Revise usuario y contraseña",
-                icon: "question"
-              });
+            IncorrectUser()
         }
     }
     return (

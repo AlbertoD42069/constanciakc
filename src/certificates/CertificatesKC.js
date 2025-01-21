@@ -7,16 +7,16 @@ import { TextCertificatesKC } from '../Resource/Resource';
 import { PrintCert, ViewStudData, DeleteStudData } from './ActionBtnTable';
 import '../certificates/ActionBtnTable.css';
 
-export default function CertificatesKC() {
+const CertificatesKC =()=> {
     
     const [collecionAlumnos, setCollecionAlumnos] = useState([]);
     const collectionName = "alumnosKC";
-    const alumRef = collection(dbkc,collectionName);
-    const q = query(alumRef, orderBy('horaExpedicion'));
-
+    
     useEffect(() => {
         const getCollection = async () => {
             try {
+                const alumRef = collection(dbkc,collectionName);
+                const q = query(alumRef, orderBy('horaExpedicion'));  
                 const snapshot = await getDoc(q);
                 const datos = snapshot.docs.map((doc) => ({
                     id: doc.id,
@@ -59,3 +59,4 @@ export default function CertificatesKC() {
     </div>
   )
 }
+export default  CertificatesKC

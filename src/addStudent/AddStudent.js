@@ -6,7 +6,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { RegistrationDate, RegistrationTime } from './FuncAddStudent';
 import { CampoFaltante, StudentAddedSuccessfully, ErrorAddStudent } from '../alertSwal/AlertSwal';
 
-export default function AddStudent() {
+const AddStudent = () => {
 
     const collectionName = "alumnosKC"
     const alumnoCollectionRef = collection(dbkc, collectionName);
@@ -70,7 +70,6 @@ export default function AddStudent() {
     }
 
   return (
-    <div>
         <Container className='Container'><br/>
         <div className='TituloAddStudent'>
             <h1  className='text-center'>{TextFormStatic.titulo}</h1>
@@ -169,9 +168,9 @@ export default function AddStudent() {
     <Button className='AddBtn'size="lg" onClick={addStudentKC}>{TextFormStatic.btnTitulo}</Button>
   </Form>
   </Container>
-    </div>
   )
 }
+export default AddStudent
 /*
 <div>
       <Container className='Container'><br/>

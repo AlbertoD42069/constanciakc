@@ -1,17 +1,18 @@
+import { DataStudent, DeleteStudent } from "../alertSwal/AlertSwal";
 import { dbkc } from "../firebase";
 import {deleteDoc, doc} from 'firebase/firestore';
 
 
 export const PrintCert = (dataAlumno) => {
-    /*printStudentCertificate(dataAlumno);*/
+    //printStudentCertificate(dataAlumno);
 }
 export const ViewStudData = (dataAlumno) => {
-    /*dataStudent(dataAlumno);*/
+    DataStudent(dataAlumno);
 }
 export const DeleteStudData = async(id) => {
-    const collectionName = "alumnos"
-    /*if (id != '') {
+    const collectionName = "alumnosKC"
+    if (id != '') {
         await deleteDoc(doc(dbkc, collectionName, id))
-        deleteStudent(id)
-    }*/
+        DeleteStudent(id)
+    }
 }

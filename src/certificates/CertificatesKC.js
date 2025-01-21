@@ -51,6 +51,7 @@ const CertificatesKC =()=> {
             <td><button className='printCertificate' onClick={() => PrintCert(dataAlumno)}>{TextCertificatesKC.imprimir}</button></td>
             <td><button className='viewStudentData' onClick={() => ViewStudData(dataAlumno)}>{TextCertificatesKC.verDatosAlumno}</button></td>
             <td><button className='deleteStudentData' onClick={() => DeleteStudData(dataAlumno.id)}>{TextCertificatesKC.eliminar}</button></td>
+
           </tr>
         ))}
       </tbody>
@@ -60,3 +61,5 @@ const CertificatesKC =()=> {
   )
 }
 export default  CertificatesKC
+
+//<td><button className='deleteStudentData' onClick={() => Update(dataAlumno)}>{TextCertificatesKC.actualizar}</button></td>

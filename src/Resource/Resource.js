@@ -25,6 +25,7 @@ export const TextCertificatesKC = {
     imprimir: 'Imprimir',
     verDatosAlumno: 'ver datos',
     eliminar: 'Eliminar',
+    actualizar: 'Actualizar'
 }
 export const TextosStaticosCostancia = {
     secrFederalizada : "SECRETARIA DE EDUCACIÓN FEDERALIZADA",

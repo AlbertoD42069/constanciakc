@@ -1,6 +1,6 @@
 import React,{ useEffect, useState } from 'react'
 import { dbkc } from '../firebase';
-import { collection, getDoc, orderBy, query } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import { TextCertificatesKC } from '../Resource/Resource';
@@ -15,9 +15,9 @@ const CertificatesKC =()=> {
     useEffect(() => {
         const getCollection = async () => {
             try {
-                const alumRef = collection(dbkc,collectionName);
-                const q = query(alumRef, orderBy('horaExpedicion'));  
-                const snapshot = await getDoc(q);
+                const alumnosRef = collection(dbkc,collectionName);
+                const q = query(alumnosRef, orderBy('horaExpedicion'));  
+                const snapshot = await getDocs(q);
                 const datos = snapshot.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),

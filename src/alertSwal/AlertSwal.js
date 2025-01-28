@@ -29,21 +29,58 @@ export const CampoFaltante = () => {
       text: "Alumno no agregado",
     });
   }
+  
   export const DataStudent = (datosAlumno) => {
     Swal.fire({
       icon: "info",
       title: "Datos Alumno",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "OK",
+
+
+      cancelButtonColor: "green",
       html: `
       <div>
-        <h4>Nombre completo: ${datosAlumno.nombres + ' ' + datosAlumno.primerApellido + ' '+ datosAlumno.segundoApellido}</h4>
-        <h4>Fecha de nacimiento: ${datosAlumno.fechaNacimiento}</h4>
-        <h4>Curp: ${datosAlumno.curp}</h4>
-        <h4>Matricula: ${datosAlumno.matricula}</h4>
-        <h4>Grado: ${datosAlumno.grado}</h4>
-        <h4>Ciclo escolar: ${datosAlumno.cicloEscolar}</h4>
+        <table class="table table-bordered" style="text-align:left;">
+          <tbody>
+            <tr>
+             <th>Nombre completo: </th> 
+             <th>${datosAlumno.nombres + ' ' + datosAlumno.primerApellido + ' '+ datosAlumno.segundoApellido}</th>
+             </tr>
+             <tr>
+              <th>Fecha de nacimiento: </th>
+              <th>${datosAlumno.fechaNacimiento}</th>
+             </tr>
+             <tr>
+              <th>Curp</th>
+              <th>${datosAlumno.curp}</th>
+             </tr>
+             <tr>
+             <th>Matricula</th>
+             <th>${datosAlumno.matricula}</th>
+             </tr>
+             <tr>
+             <th>Grado</th>
+             <th>${datosAlumno.grado}</th>
+             </tr>
+             <tr>
+             <th>Ciclo escolar</th>
+             <th>${datosAlumno.cicloEscolar}</th>
+             </tr>
+          </tbody>
+        </table>
       </di>
       `,
+    }).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
     });
+  }
+});;
   }
   export const DeleteStudent =(id) => {
     Swal.fire({

@@ -23,8 +23,9 @@ export const TextCertificatesKC = {
     curp: 'Curp',
     accionesConstancia: 'Acciones constancia',
     imprimir: 'Imprimir',
-    verDatosAlumno: 'ver datos',
+    verDatosAlumno: 'Ver datos',
     eliminar: 'Eliminar',
+    actualizar: "Actualizar"
 }
 export const TextosStaticosCostancia = {
     secrFederalizada : "SECRETARIA DE EDUCACIÓN FEDERALIZADA",
@@ -40,3 +41,6 @@ export const TextosStaticosCostancia = {
     nombreDirectora: 'Lic. Adela Albina Dominguez Diaz',
     puesto: 'Directora del jardin de niñas y niños CUAUHTÉMOC',
   };
+export const TextoStaticoUpdateStudent = {
+    titulo : 'Actualizar alumno'
+}

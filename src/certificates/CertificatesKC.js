@@ -6,11 +6,15 @@ import Table from 'react-bootstrap/Table';
 import { TextCertificatesKC } from '../Resource/Resource';
 import { PrintCert, ViewStudData, DeleteStudData } from './ActionBtnTable';
 import '../certificates/ActionBtnTable.css';
+import { data, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import UpdateStudent from './UpdateStudent';
 
 const CertificatesKC =()=> {
     
     const [collecionAlumnos, setCollecionAlumnos] = useState([]);
     const collectionName = "alumnosKC";
+    const navigate = useNavigate();
     
     useEffect(() => {
         const getCollection = async () => {
@@ -29,6 +33,12 @@ const CertificatesKC =()=> {
         };
         getCollection();
     }, []);
+
+    const UpdateStd = async (dataAlumno) => {
+        console.log(dataAlumno);
+        navigate('/UpdateStudent', {state: {alumno: dataAlumno}})
+    }
+
   return (
     <div>
         <Container className='Container'><br/>
@@ -40,7 +50,7 @@ const CertificatesKC =()=> {
         <tr>
           <th>{TextCertificatesKC.nombreCompleto}</th>
           <th>{TextCertificatesKC.curp}</th>
-          <th colSpan={3}>{TextCertificatesKC.accionesConstancia}</th>
+          <th colSpan={4}>{TextCertificatesKC.accionesConstancia}</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +61,8 @@ const CertificatesKC =()=> {
             <td><button className='printCertificate' onClick={() => PrintCert(dataAlumno)}>{TextCertificatesKC.imprimir}</button></td>
             <td><button className='viewStudentData' onClick={() => ViewStudData(dataAlumno)}>{TextCertificatesKC.verDatosAlumno}</button></td>
             <td><button className='deleteStudentData' onClick={() => DeleteStudData(dataAlumno.id)}>{TextCertificatesKC.eliminar}</button></td>
+            <td><button className='deleteStudentData'onClick={() => UpdateStd(dataAlumno)}>{TextCertificatesKC.actualizar}</button></td>
+
           </tr>
         ))}
       </tbody>

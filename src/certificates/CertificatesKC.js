@@ -4,7 +4,7 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import { TextCertificatesKC } from '../Resource/Resource';
-import { PrintCert, ViewStudData, DeleteStudData } from './ActionBtnTable';
+import { PrintCert, ViewStudData, DeleteStudData, UpdateStudData } from './ActionBtnTable';
 import '../certificates/ActionBtnTable.css';
 
 const CertificatesKC =()=> {
@@ -40,7 +40,7 @@ const CertificatesKC =()=> {
         <tr>
           <th>{TextCertificatesKC.nombreCompleto}</th>
           <th>{TextCertificatesKC.curp}</th>
-          <th colSpan={3}>{TextCertificatesKC.accionesConstancia}</th>
+          <th colSpan={4}>{TextCertificatesKC.accionesConstancia}</th>
         </tr>
       </thead>
       <tbody>
@@ -51,7 +51,7 @@ const CertificatesKC =()=> {
             <td><button className='printCertificate' onClick={() => PrintCert(dataAlumno)}>{TextCertificatesKC.imprimir}</button></td>
             <td><button className='viewStudentData' onClick={() => ViewStudData(dataAlumno)}>{TextCertificatesKC.verDatosAlumno}</button></td>
             <td><button className='deleteStudentData' onClick={() => DeleteStudData(dataAlumno.id)}>{TextCertificatesKC.eliminar}</button></td>
-
+            <td><button className='deleteStudentData' onClick={() => UpdateStudData(dataAlumno)}>{TextCertificatesKC.actualizar}</button></td>
           </tr>
         ))}
       </tbody>

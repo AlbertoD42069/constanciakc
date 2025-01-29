@@ -1,10 +1,11 @@
 import { DataStudent, DeleteStudent } from "../alertSwal/AlertSwal";
 import { dbkc } from "../firebase";
 import {deleteDoc, doc} from 'firebase/firestore';
+import GeneratePdf from "../generatePDF/GeneratePdf";
 
 
 export const PrintCert = (dataAlumno) => {
-    //printStudentCertificate(dataAlumno);
+    GeneratePdf(dataAlumno)
 }
 export const ViewStudData = (dataAlumno) => {
     DataStudent(dataAlumno);

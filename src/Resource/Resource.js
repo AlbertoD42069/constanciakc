@@ -21,6 +21,7 @@ export const TextCertificatesKC = {
     numConst: '#',
     nombreCompleto: 'Nombre completo',
     curp: 'Curp',
+    fechaEmision: 'Fecha de emision',
     accionesConstancia: 'Acciones constancia',
     imprimir: 'Imprimir',
     verDatosAlumno: 'ver datos',

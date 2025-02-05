@@ -149,6 +149,7 @@ const AddStudent = () => {
         className='InputTextGrade'
         value={studentGrade}
         onChange={(e)=>setStudentGrade(e.target.value)}>
+        <option value="">Seleciona una opcion</option>
         <option value="Primero">Primero</option>
         <option value="Segundo">Segundo</option>
         <option value="Tercero">Tercero</option>
@@ -157,7 +158,7 @@ const AddStudent = () => {
       <Form.Group as={Col} md="4" controlId="validationCustom04">
         <Form.Label>{TextFormStatic.cicloEscolar}</Form.Label>
         <Form.Control 
-        type="text"  
+        type="number"  
         required 
         className='InputText'
         value={schoolYearStudent}

@@ -40,6 +40,7 @@ const CertificatesKC =()=> {
         <tr>
           <th>{TextCertificatesKC.nombreCompleto}</th>
           <th>{TextCertificatesKC.curp}</th>
+          <th>{TextCertificatesKC.fechaEmision}</th>
           <th colSpan={3}>{TextCertificatesKC.accionesConstancia}</th>
         </tr>
       </thead>
@@ -48,6 +49,7 @@ const CertificatesKC =()=> {
           <tr key={dataAlumno.id}>
             <td>{dataAlumno.nombres} {dataAlumno.primerApellido} {dataAlumno.segundoApellido}</td>
             <td>{dataAlumno.curp}</td>
+            <td>{dataAlumno.fechaExpedicion}</td>
             <td><button className='printCertificate' onClick={() => PrintCert(dataAlumno)}>{TextCertificatesKC.imprimir}</button></td>
             <td><button className='viewStudentData' onClick={() => ViewStudData(dataAlumno)}>{TextCertificatesKC.verDatosAlumno}</button></td>
             <td><button className='deleteStudentData' onClick={() => DeleteStudData(dataAlumno.id)}>{TextCertificatesKC.eliminar}</button></td>

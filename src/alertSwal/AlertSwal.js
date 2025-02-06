@@ -18,7 +18,7 @@ export const CampoFaltante = () => {
     const nameStudent = name + ' ' + lastName + ' ' +  secondLastNname
     Swal.fire({
       title: "¡Exito!",
-      html: `Alumno con matricula: ${nameStudent} agregado`,
+      html: `Alumno: ${nameStudent} agregado`,
       icon: "success"
     });    
   }

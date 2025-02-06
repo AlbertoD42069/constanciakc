@@ -20,7 +20,7 @@ export default function GeneratePdf(datosAlumno) {
     constStudent.text(TextosStaticosCostancia.nombreKinder, 105, 35, null, null, alingTextCenter);
     constStudent.text(TextosStaticosCostancia.claveCentroTrabajo, 105, 40, null, null, alingTextCenter);
 
-    constStudent.setFontSize(20);
+    constStudent.setFontSize(15);
     constStudent.setFont("helvetica", "italic");
     constStudent.text(TextosStaticosCostancia.logoAño, 105, 70, null, null, alingTextCenter);
     constStudent.text(TextosStaticosCostancia.logoAño1, 105, 80, null, null, alingTextCenter);
@@ -31,18 +31,18 @@ export default function GeneratePdf(datosAlumno) {
 
     const margin = { top: 125, right: 20, bottom: 100, left: 25 };
     const marginFooter = { top: 180, right: 20, bottom: 100, left: 25 };
-
+    
     const cuerpo = `Por medio de la presente informo a quien correspondas que el alumno(a) ${datosAlumno.nombres} ${datosAlumno.primerApellido} ${datosAlumno.segundoApellido} con matricula ${datosAlumno.matricula}, nacido el ${datosAlumno.fechaNacimiento} con la curp ${datosAlumno.curp}. Esta actualmente INSCRITO en el ${datosAlumno.grado} del jardin de niñas y niños "CUAUHTÉMOC" con C.C.T 07DCC1395S de educación preescolar del ciclo escolar ${datosAlumno.cicloEscolar} el cual se encuentra ubicado en la esquina de la calle Central Poniente Rayón, Chiapas.`
     const emisionComst = `Se extiende la presente, para los fines legales que al interesado convenga con fecha de emisión el ${datosAlumno.fechaExpedicion}`;
     
-    const textoAjustado = constStudent.splitTextToSize(cuerpo, 225);
-    const textoAjustadoEmision = constStudent.splitTextToSize(emisionComst, 225);
+    const textoAjustado = constStudent.splitTextToSize(cuerpo, 200);
+    const textoAjustadoEmision = constStudent.splitTextToSize(emisionComst, 200);
     
     constStudent.setFont("helvetica", "bold");
     constStudent.text(TextosStaticosCostancia.tituloCostancia, 105, 100, null, null, alingTextCenter);
     
     constStudent.setFont("helvetica", "normal");
-    constStudent.setFontSize(13);
+    constStudent.setFontSize(12);
     constStudent.text(textoAjustado, margin.left, margin.top, { align: "justify", maxWidth: 160});
     constStudent.text(textoAjustadoEmision, marginFooter.left, marginFooter.top, { align: "justify", maxWidth: 160});
     

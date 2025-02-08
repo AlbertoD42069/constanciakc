@@ -158,7 +158,7 @@ const AddStudent = () => {
       <Form.Group as={Col} md="4" controlId="validationCustom04">
         <Form.Label>{TextFormStatic.cicloEscolar}</Form.Label>
         <Form.Control 
-        type="number"  
+        type="text"  
         required 
         className='InputText'
         value={schoolYearStudent}

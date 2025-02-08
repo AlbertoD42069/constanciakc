@@ -6,3 +6,6 @@
     display:flex ;
     margin-inline: 200px;
 }
+.inputKCs,  .btnLogin {
+  width: 350px;
+}

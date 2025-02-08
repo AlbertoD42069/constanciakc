@@ -5,6 +5,7 @@ import { TextLoginStatic } from '../Resource/Resource.js'
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import { authKC } from '../firebase';
 import { IncorrectUser } from '../alertSwal/AlertSwal.js';
+import '../login/LoginKC.css'
 
 const LoginBtn = (props) => {
 
